@@ -26,43 +26,38 @@ fish.addEventListener('loadeddata', function() {
         if (event.keyCode == 37) {
             //console.log('prev');
             ft -= 1;
-            fish.currentTime = ft;
         }else if (event.keyCode == 39) {
             //console.log('next');
             ft += 1;
-            fish.currentTime = ft;
         }
-        
         if(ft >= fish.duration){
             ft = 0;  
         }else if(ft <= 0){
            ft = fish.duration;
         }
+        fish.currentTime = ft;
     });
-    
     $(window).scroll(function(event){
         var st = $(this).scrollTop();
         if (st > lastScrollTop){
             //console.log("down")
             ft += 1;
-            fish.currentTime = ft;
         } else {
             //console.log("up")
             ft -= 1;
-            fish.currentTime = ft;
         }
-       lastScrollTop = st;
-
         if(ft >= fish.duration){
             ft = 0;  
         }else if(ft <= 0){
             ft = fish.duration;
         }
-        
+        lastScrollTop = st;
+        fish.currentTime = ft;
         scrollEvents(st);
     });
-    
 }, false);
+
+
 
 fish.onseeked = function() {
     render(fish);
