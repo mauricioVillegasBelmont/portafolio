@@ -1,0 +1,497 @@
+
+*{
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 767.98px) {
+    h1{
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+    h2, h3{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    h4, h5, h6{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        
+    }
+    
+    .material-icons,p, ul li {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+    }
+    nav{
+        /*height: auto;*/
+        overflow-x: scroll;
+    }
+    nav ul li{
+        flex-grow: 1;
+    }
+    header{
+        top: 0vw;
+    }
+    header h1{
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    header h2{
+        background-color: rgba(244, 244, 244,0.5);
+        padding: 0.5rem;
+        text-align: center;
+    }
+    footer{
+        width: 50px;
+        min-height: 55px;
+        max-height: 55px;
+    }
+    footer.active{
+        display: flex;
+        width: calc(320px + 1rem);
+        max-width: calc(320px + 1rem);
+        -webkit-border-radius: 0 1rem 0 0;
+        -moz-   border-radius: 0 1rem 0 0;
+                border-radius: 0 1rem 0 0;
+    }
+    footer #contact-close{
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 50px;
+        line-height: 100%;
+    }
+    #contact-close span{
+        display: none;
+    }
+    #contact-close i{
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+    #contact-close p{
+        height: 100%;
+    }
+    footer.active .info{
+        width: calc(100% - 50px);
+        padding: 0.3rem 2vw 0.3rem 1rem;
+    }
+    footer .info p{
+        font-size: 0.8rem;
+        line-height: 1rem;
+        vertical-align: middle;
+    }
+    blockquote{
+        font-size: 2rem;
+    }
+    .scroll-next{
+        display: none;
+    }
+    section:first-of-type .scroll-next{
+        display: block;
+        top: 85vh;
+    }
+    .quote p{
+        font-size: 1.5rem;
+    }
+    .card{
+        width: 100%;
+        max-width: calc(320px - 2rem);
+
+    }
+    #coverPage{
+        top: 2rem;
+        background-size: 200% auto;
+    }
+    #video.active{
+        opacity: 0.5 !important;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    h1{
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+    }
+    h2, h3{
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+    h4, h5, h6{
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        
+    }
+    
+    .material-icons,p, ul li {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    nav{
+        /*height: auto;*/
+        overflow-x: scroll;
+    }
+    nav ul li{/**/
+        flex-grow: 0;
+    }
+    header{
+        top: 0vw;/**/
+    }
+    header h1{
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    header h2{
+        background-color: rgba(244, 244, 244,0.5);
+        padding: 0.5rem;
+        text-align: center;
+    }
+    
+    footer{
+        width: 50px;
+        max-height: 4rem;
+        min-height: 3rem;
+    }
+    footer.active{
+        display: flex;
+        width: calc(320px + 1rem);
+        max-width: calc(320px + 1rem);
+        -webkit-border-radius: 0 1rem 0 0;
+        -moz-   border-radius: 0 1rem 0 0;
+                border-radius: 0 1rem 0 0;
+    }
+    footer #contact-close{
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 50px;
+        line-height: 100%;
+    }
+    #contact-close span{
+        display: none;
+    }
+    #contact-close i{
+        font-size: 2.8rem;
+        line-height: 77px;
+    }
+    #contact-close p{
+        height: 100%;
+    }
+    footer.active .info{
+        width: calc(100% - 50px);
+        padding: 0.5rem 2vw 0.5rem 1rem;
+    }
+    footer .info p{
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        vertical-align: middle;
+    }
+    
+    .scroll-next{
+        display: block;
+        top: 90vh;
+    }
+    blockquote{
+        font-size: 2rem;
+    }
+    blockquote p{
+        font-size: 1.5rem;
+    }
+    .card{
+        width: 100%;
+        max-width: calc(400px - 2rem);
+
+    }
+    #coverPage{
+        top: 2rem;
+        background-size: 150% auto;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    h2, h3{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    h4, h5, h6{
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        
+    }
+    
+    .material-icons,p, ul li {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    nav{
+        overflow: hidden;
+    }
+    nav ul li{
+        flex-grow: 0;
+    }
+    header{
+        top: 0vw;
+    }
+    header h1{
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    header h2{
+        background-color: rgba(244, 244, 244,0.5);
+        padding: 0.5rem;
+        text-align: center;
+    }
+    
+    footer{
+        width: 80px;
+        max-height: 80px;
+    }
+    footer.active{
+        width: calc(450px + 1rem);
+        max-width: calc(450px + 1rem);
+        -webkit-border-radius: 0 1rem 0 0;
+        -moz-   border-radius: 0 1rem 0 0;
+                border-radius: 0 1rem 0 0;
+    }
+    footer #contact-close{
+        height: 100%;
+        width: 80px;
+        line-height: 100%;
+    }
+    #contact-close p{
+        position: relative;
+        height: 100%;
+        flex-direction: column;
+    }
+    #contact-close span{
+        display: block;
+    }
+    #contact-close i{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    footer.active .info{
+        width: calc(100% - 80px);
+        padding: 1rem 2vw 1rem 1rem;
+    }
+    footer .info p{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        vertical-align: middle;
+    }
+    section{
+        max-width: 1366px;
+        margin: 0 auto;
+    }
+    section:first-of-type{
+        max-width: 100%;
+        
+    }
+    .scroll-next{
+        display: block;
+        top: 93vh;
+    }
+    blockquote{
+        font-size: 3.5rem;
+    }
+    .quote p{
+        font-size: 2rem;
+        
+    }
+    .card{
+        width: 100%;
+        max-width: calc(400px - 2rem);
+    }
+    #coverPage{
+        top: 0;
+        background-size: 100% auto;
+    }
+    
+    
+    #portfolio-modal{
+        z-index: 100;
+        width: calc(50vw + calc(calc(calc(1366px / 2) - 500px) - 2rem));
+        background-color: rgba(0,0,0,0.3);
+    }
+    #portfolio-modal .modal-container{
+        height: 100%;/**/
+    }
+    #portfolio-modal .btn, #portfolio-modal .btn i, #portfolio-modal .btn .dot{
+        z-index: 1001;/**/
+    }
+    #portfolio-modal .navigationControler{
+        top: 70%;
+        height: 40px;/**/
+    }
+    #portfolio-modal .btn{
+        width:  40px;/**/
+    }
+    #portfolio-modal .modal-container .item.active{
+        display: block;
+    }
+    #portfolio-modal .modal-container .items{
+        width: 100%;
+        height: 100%;
+    }
+    .modal-container .items .display{
+        width: 100%;
+        height: 70%;
+    }
+    .modal-container .items .info{
+        width: 100%;
+        margin-top: 40px;/**/
+        padding: 2rem 3rem;
+        height: calc(30% - 40px);/**/
+        flex-wrap: wrap;
+        -webkit-border-radius: 0 0 10px 10px;
+        -moz-   border-radius: 0 0 10px 10px;
+                border-radius: 0 0 10px 10px;
+    }
+    .modal-container .items .info h3{
+        flex: 0 0 100%;
+    }
+    .modal-container .items .info a{
+        line-height: 1.5rem;
+        flex: 0 1 50%;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+    #portfolio-modal{
+        z-index: 100;
+        width: 100%;/**/
+        background-color: rgba(0,0,0,0.75);
+    }
+    #portfolio-modal .modal-container{
+        height: 100%;/**/
+    }
+    #portfolio-modal .btn, #portfolio-modal .btn i, #portfolio-modal .btn .dot{
+        z-index: 1001;/**/
+    }
+    #portfolio-modal .navigationControler{
+        bottom:0;/**/
+        height: 40px;/**/
+    }
+    #portfolio-modal .btn{
+        width:  40px;/**/
+    }
+    #portfolio-modal .modal-container .item.active{
+        display: flex;
+    }
+    #portfolio-modal .modal-container .items{
+        height: calc(100% - 40px);
+    }
+    #portfolio-modal .modal-container .item{
+        display: flex;
+        height: 100%;/**/
+    }
+    .modal-container .items .display{
+        width: 70%;
+        height: 100%;
+    }
+    .modal-container .items .info{
+        width: 30%;
+        height: 100%;/**/
+        margin-top: 0;/**/
+        padding: 1.5rem;
+        background-color: #666;
+        border-radius: 0 10px 0 0;
+        padding: 1.5rem 1rem;
+        flex-wrap:wrap;
+    }
+    .modal-container .items .info h3{
+        flex: 0 1 100%;
+    }
+    .modal-container .items .info a{
+        line-height: 1.5rem;
+        flex: 1 0 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+    #portfolio-modal{
+        z-index: 100;
+        width: 100%;/**/
+        background-color: rgba(0,0,0,0.75);
+    }
+    #portfolio-modal .modal-container{
+        height: 100%;/**/
+    }
+    #portfolio-modal .btn, #portfolio-modal .btn i, #portfolio-modal .btn .dot{
+        z-index: 1001;/**/
+    }
+    #portfolio-modal .navigationControler{
+        top:50%;/**/
+        height: 40px;/**/
+    }
+    #portfolio-modal .btn{
+        width:  40px;/**/
+    }
+    #portfolio-modal .modal-container .item.active{
+        display: block;
+    }
+    #portfolio-modal .modal-container .items{
+        height: 100%;
+    }
+    #portfolio-modal .modal-container .item{
+        height: 100%;/**/
+    }
+    .modal-container .item .display{
+        width: 100%;
+        height: 50%;
+    }
+    .modal-container .item .info{
+        width: 100%;
+        height: calc(50% - 40px);/**/
+        margin-top: 45px;/**/
+        padding: 1rem;
+        flex-wrap:wrap;
+    }
+    .modal-container .items .info h3{
+        flex: 0 1 100%;
+    }
+    .modal-container .item .info a{
+        line-height: 1.5rem;
+        flex: 1 0 50%;
+    }
+}
+
+/*
+@media only screen and (max-width: 768px) and (min-height 1366px) and (orientation: portrait){
+    #portfolio-modal .modal-container .item.active{
+        display: block;
+    }
+    #portfolio-modal .navigationControler{
+        top:50%;
+    }
+    .modal-container .items .display{
+        height: 50%;
+    }
+    .modal-container .items .info{
+        height: calc(50% - 40px);
+    }
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
