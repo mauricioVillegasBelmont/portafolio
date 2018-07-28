@@ -24,7 +24,8 @@
     }
     nav{
         /*height: auto;*/
-        overflow-x: scroll;
+        overflow:hidden;
+        z-index: 100;
     }
     nav ul li{
         flex-grow: 1;
@@ -106,7 +107,15 @@
     #video.active{
         opacity: 0.5 !important;
     }
-
+    .btn{
+        flex-grow: 1;
+    }
+    .dots{
+        display: none !important;
+    }
+    .modal-container .item .info a{
+        flex: 1 0 100% !important;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -130,7 +139,7 @@
     }
     nav{
         /*height: auto;*/
-        overflow-x: scroll;
+        z-index: 1000;
     }
     nav ul li{/**/
         flex-grow: 0;
@@ -231,6 +240,7 @@
     }
     nav{
         overflow: hidden;
+        
     }
     nav ul li{
         flex-grow: 0;

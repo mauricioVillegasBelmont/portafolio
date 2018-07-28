@@ -87,20 +87,22 @@ function scrollEvents(cs){
         $('#video').addClass('active');
     }
     if($('#portfolio-modal').hasClass('active')){
-        //closeModal();
+        closeModal();
     }
 }
 
+
+
 $('#show-portfolio').click(function(){
+    if($('body').width()<= 1024){
+       $('body').css("overflow-y", "hidden");
+    }
     if($('#portfolio-modal').hasClass('active')){
         closeModal();
     }else{
         $('#portfolio-modal').addClass('active');
     }
 });
-
-
-
 
 
 $('.dot').click(function(){
@@ -156,9 +158,13 @@ function portaNavButton(a , l){
     }
 }
 function closeModal(){
+    if($('body').width()<= 1024){
+       $('body').css("overflow-y", "auto");
+    }
     stopVideos();
     $('#portfolio-modal').removeClass('active');
 }
+
 function stopVideos(){
     webPV.stopVideo();
     mmedPV.stopVideo();
