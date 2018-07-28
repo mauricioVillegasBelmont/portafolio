@@ -81,7 +81,9 @@ blockquote{
     font-family: 'Economica', sans-serif;
     max-width: 75%;
     margin: 0 auto;
+	text-shadow: 0px 0px 5px #000000;
 }
+
 blockquote:before{
     content: '“'
     
@@ -108,9 +110,10 @@ nav{
     position: fixed;
     width: 100%;
     height: auto;
-    z-index: 1000;
+    
     padding: 0.5rem 1rem;
     opacity: 0;
+    background-color: rgba(0,0,0,0.3);
     -webkit-transition: all 1.5s; /* Safari */
             transition: all 1.5s;
 }
@@ -523,22 +526,35 @@ canvas{
     flex-direction: row;
     flex-shrink: 0;
 }
+.modal-container .items .info a{
+    margin-left: 1.5rem;
+    
+}
+.modal-container .items .info a:before{
+    font-family: "Material Icons";
+    text-decoration: none;
+    margin-left: -1.5rem;
+}
+.modal-container #webPortfolio .info a:before{
+    content: "\e051\00a0";
+}
+.modal-container #multimediaPortfolio .info a:before{
+    content: "\e54d\00a0";
+}
+.modal-container #printPortfolio .info a:before{
+    content: "\e3f4\00a0";
+}
+
 .btn.disabled{
     pointer-events: none;
     opacity: 0.3;
 }
 
 
-.modal-container .dot:nth-child(1) {
-    color: rgba(115, 21, 155, 1);
+.modal-container .dot {
+    color: #fff;
 }
-.modal-container .dot:nth-child(2){
-    color: rgba(0 , 200, 200, 1);
-}
-.modal-container .dot:nth-child(3) {
-    color: rgba(255 , 100, 100, 1);
-    
-}
+
 
 .modal-container .item:nth-child(1) .info{
     background-color: rgba(115, 21, 155, 0.7);
