@@ -166,8 +166,12 @@ function closeModal(){
 }
 
 function stopVideos(){
-    webPV.stopVideo();
-    mmedPV.stopVideo();
+    if (webPV){
+        webPV.stopVideo();
+    }
+    if(mmedPV){
+        mmedPV.stopVideo();
+    }
 }
 function loaded(){
     $('body').addClass('loaded');
