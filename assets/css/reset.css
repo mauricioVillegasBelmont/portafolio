@@ -113,3 +113,13 @@ body.loaded .loading{
         transform: rotate(1turn)
     }
 }
+
+#progressBar {
+    width: 100%;
+    background-color: grey;
+}
+#progress {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+}

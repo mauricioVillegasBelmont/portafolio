@@ -25,7 +25,7 @@
     nav{
         /*height: auto;*/
         overflow:hidden;
-        z-index: 100;
+        z-index: 10;
     }
     nav ul li{
         flex-grow: 1;
@@ -139,7 +139,7 @@
     }
     nav{
         /*height: auto;*/
-        z-index: 1000;
+        z-index: 101;
     }
     nav ul li{/**/
         flex-grow: 0;
@@ -241,6 +241,9 @@
     nav{
         overflow: hidden;
         
+    }
+    nav.active{
+        z-index: 101;
     }
     nav ul li{
         flex-grow: 0;
