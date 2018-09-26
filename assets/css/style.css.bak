@@ -404,6 +404,7 @@ canvas{
 
 
 
+
 #portfolio-modal{
     display: none;
     position: fixed;
@@ -413,18 +414,6 @@ canvas{
     bottom: 0;
     height: 100%;
     padding: 3rem 2rem 10vh 2rem;
-}
-#show-portfolio{
-    background-color: rgba(251, 176, 59,0.7);
-    position: fixed;
-    opacity: 0;
-    transition: all 1s ease;
-    top: 100%;
-    transform: translateY(-100%);
-    left: 6rem;
-}
-#show-portfolio.active{
-    opacity: 1;
 }
 #portfolio-modal.active{
     display: block;
@@ -459,8 +448,7 @@ canvas{
     border-right:  1px solid rgba(200, 220, 250, 0.8);
 }
 #portfolio-modal .navigationControler a{
-    background-color: rgba(130, 110, 130, 0.7);
-    border-right:  1px solid rgba(255, 255, 255, 1);
+    border-right:  1px solid rgba(255, 255, 255, 0.2);
     user-select: none;
 }
 #portfolio-modal .navigationControler a:last-child{

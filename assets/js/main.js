@@ -59,6 +59,17 @@ $('section').on('scrollSpy:enter', function() {
 $('section').on('scrollSpy:exit', function() {
     $('a[href = "#'+$(this).attr('id')+'" ]').removeClass('active');
 });
+$('section#myExperience').on('scrollSpy:enter', function() {
+    $('#show-portfolio').addClass('active');
+    //console.log('myExperience enter');
+});
+$('section#myExperience').on('scrollSpy:exit', function() {
+    $('#show-portfolio').removeClass('active');
+    if($('#portfolio-modal').hasClass('active')){
+       closeModal();
+    }
+    //console.log('myExperience exit');
+});
 $('section').scrollSpy();
 
 $( window ).resize(function(){
@@ -87,7 +98,7 @@ function scrollEvents(cs){
         $('#video').addClass('active');
     }
     if($('#portfolio-modal').hasClass('active')){
-        closeModal();
+        //closeModal();
     }
 }
 
@@ -102,6 +113,7 @@ $('#show-portfolio').click(function(){
     }else{
         $('#portfolio-modal').addClass('active');
     }
+    $(this).removeClass('active');
 });
 
 
@@ -130,6 +142,7 @@ $('.next').click(function(){
 
 $('#modal-close').click(function(){
     closeModal();
+    $('#show-portfolio').addClass('active');
 });
 
 function slideSelector(a){
