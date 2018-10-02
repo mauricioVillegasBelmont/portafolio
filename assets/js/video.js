@@ -1,5 +1,5 @@
-var canvas = document.getElementById("video");
-var ctx = canvas.getContext('2d');
+// var canvas = document.getElementById("video");
+// var ctx = canvas.getContext('2d');
 const fish = document.getElementById("fish");
 console.log(fish.currentSrc);
 
@@ -19,70 +19,93 @@ var fw;
 var fh;
 var ft = 0;
 
-function fishSetup() {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    fw = (canvas.height * fish.videoWidth) / fish.videoHeight;
-}
-$(window).resize(fishSetup);
-fish.oncanplay = function () {}
+// function fishSetup() {
+//     canvas.height = window.innerHeight;
+//     canvas.width = window.innerWidth;
+//     fw = (canvas.height * fish.videoWidth) / fish.videoHeight;
+// }
+// $(window).resize(fishSetup);
+// fish.oncanplay = function () {}
 
-if (window.FileReader && window.Blob) {
-    // All the File APIs are supported.
-    console.log('file appi supported');
-} else {
-    console.log('file appi not supported');
-    // File and Blob are not supported
-}
-
-
-
-
-fish.onloadeddata = function () {    
-    fishSetup();
-    render(fish);
-    $(document).keydown(function (event) {
-        if (event.keyCode == 37) {
-            //console.log('prev');
-            ft -= 1;
-        }
-        else if (event.keyCode == 39) {
-            //console.log('next');
-            ft += 1;
-        }
-        if (ft >= fish.duration) {
-            ft = 0;
-        }
-        else if (ft <= 0) {
-            ft = fish.duration;
-        }
-        fish.currentTime = ft;
-    });
-    $(window).scroll(function (event) {
-        var st = $(this).scrollTop();
-        if (st > lastScrollTop) {
-            //console.log("down")
-            ft += 1;
-        }
-        else {
-            //console.log("up")
-            ft -= 1;
-        }
-        if (ft >= fish.duration) {
-            ft = 0;
-        }
-        else if (ft <= 0) {
-            ft = fish.duration;
-        }
-        lastScrollTop = st;
-        fish.currentTime = ft;
-        scrollEvents(st);
-    });
-}
-fish.onseeked = function () {
-    render(fish);
+// if (window.FileReader && window.Blob) {
+//     // All the File APIs are supported.
+//     console.log('file appi supported');
+// } else {
+//     console.log('file appi not supported');
+//     // File and Blob are not supported
+// }
+$.fn.scrollEnd = function(callback, timeout) {
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
 };
 
-function render(video) {
-    ctx.drawImage(video, fwo, fho, fw, canvas.height);
-}
+// how to call it (with a 1000ms timeout):
+$(window).scrollEnd(function(){
+  //console.log('scroll end');
+  fish.pause();
+}, 250);
+$(window).scroll(function (event) {
+    fish.play();
+});
+
+$(window).scroll(function (event) {
+  //var st = $(this).scrollTop();
+  scrollEvents($(this).scrollTop());
+});
+
+
+//
+//
+// fish.onloadeddata = function () {
+//     fishSetup();
+//     render(fish);
+//     $(document).keydown(function (event) {
+//         if (event.keyCode == 37) {
+//             //console.log('prev');
+//             ft -= 1;
+//         }
+//         else if (event.keyCode == 39) {
+//             //console.log('next');
+//             ft += 1;
+//         }
+//         if (ft >= fish.duration) {
+//             ft = 0;
+//         }
+//         else if (ft <= 0) {
+//             ft = fish.duration;
+//         }
+//         fish.currentTime = ft;
+//     });
+//     $(window).scroll(function (event) {
+//         var st = $(this).scrollTop();
+//         if (st > lastScrollTop) {
+//             //console.log("down")
+//             ft += 1;
+//         }
+//         else {
+//             //console.log("up")
+//             ft -= 1;
+//         }
+//         if (ft >= fish.duration) {
+//             ft = 0;
+//         }
+//         else if (ft <= 0) {
+//             ft = fish.duration;
+//         }
+//         lastScrollTop = st;
+//         fish.currentTime = ft;
+//         scrollEvents(st);
+//     });
+// }
+// fish.onseeked = function () {
+//     render(fish);
+// };
+//
+// function render(video) {
+//     ctx.drawImage(video, fwo, fho, fw, canvas.height);
+// }

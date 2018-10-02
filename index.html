@@ -26,11 +26,16 @@
             <span class="loading__anim"></span>
         </div>
     </div>
-    
-    <video id="fish" muted crossorigin>
-        <source src="assets/vid/fish-30s_1fps_30q.webm" type="video/webm">
-        <source src="assets/vid/fish-30s_1fps_0-5mbr_5kf.mp4" type="video/mp4">
-    </video>
+
+        <video id="fish" muted crossorigin loop>
+            <!-- <source src="https://res.cloudinary.com/miau-vi-be/video/upload/v1538507348/fish25fps_device.webm" media="all and (max-width: 768px)" type="video/webm">
+            <source src="https://res.cloudinary.com/miau-vi-be/video/upload/v1538507350/fish25fps.webm" media="all and (min-width: 769px)" type="video/webm"> -->
+            <source src="https://res.cloudinary.com/miau-vi-be/video/upload/v1538506796/fish25fps_device.mp4" media="all and (max-width: 768px)" type="video/mp4">
+            <source src="https://res.cloudinary.com/miau-vi-be/video/upload/v1538506799/fish25fps.mp4" media="all and (min-width: 769px)" type="video/mp4">
+        </video>
+    <!--<div id="video-wrapper">
+    </div>-->
+    <div id="videoCover"></div>
     <header class="active">
         <h1>Currículum Vitae</h1>
         <h2>D.C.G. Mauricio Villegas Belmont</h2>
@@ -152,7 +157,7 @@
     <section id="SoftwareUsage">
         <h1>Software que manejo</h1>
         <div class="card">
-        
+
             <h4>ilustración, fotografía y manipulación digital</h4>
             <ul>
                 <li>Adobe illustrator</li>
@@ -248,9 +253,9 @@
             </ul>
         </div>
     </section>
-    <canvas id="video">
+    <!-- <canvas id="video">
         your browser dosn´t soppourt canvas
-    </canvas>
+    </canvas> -->
     <div id="portfolio-modal" class="">
         <div class="modal-container">
             <div id="items" class="items">
@@ -302,6 +307,7 @@
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/check.js"></script>
     <script src="assets/js/scrollspy.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/video.js"></script>

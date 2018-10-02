@@ -89,13 +89,13 @@ function scrollEvents(cs){
     if(cs >= ($('#coverPage').height()*1.2)){
         $('body').addClass('footerShowed');
     }
-    if(cs <= $('#coverPage').height()*0.85){
+    if(cs <= $('#coverPage').height()*0.5){
         //console.log('cover');
         $('nav').removeClass('active');
-        $('#video').removeClass('active');
+        $('#fish').removeClass('active');
     }else{
         $('nav').addClass('active');
-        $('#video').addClass('active');
+        $('#fish').addClass('active');
     }
     if($('#portfolio-modal').hasClass('active')){
         //closeModal();
