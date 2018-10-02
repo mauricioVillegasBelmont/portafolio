@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 768px) {
     h1{
         font-size: 1.2rem;
         line-height: 1.7rem;
@@ -15,9 +15,9 @@
     h4, h5, h6{
         font-size: 1rem;
         line-height: 1.5rem;
-        
+
     }
-    
+
     .material-icons,p, ul li {
         font-size: 0.9rem;
         line-height: 1.2rem;
@@ -102,7 +102,8 @@
     }
     #coverPage{
         top: 2rem;
-        background-size: 200% auto;
+        background-size: contain;
+        background-image: url(https://res.cloudinary.com/miau-vi-be/image/upload/v1538508681/fish/cat_responsive.png);
     }
     #video.active{
         opacity: 0.5 !important;
@@ -122,7 +123,7 @@
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     h1{
         font-size: 1.6rem;
         line-height: 2.1rem;
@@ -134,9 +135,9 @@
     h4, h5, h6{
         font-size: 1.2rem;
         line-height: 1.6rem;
-        
+
     }
-    
+
     .material-icons,p, ul li {
         font-size: 1rem;
         line-height: 1.3rem;
@@ -161,7 +162,7 @@
         padding: 0.5rem;
         text-align: center;
     }
-    
+
     footer{
         width: 50px;
         max-height: 4rem;
@@ -201,7 +202,7 @@
         line-height: 1.3rem;
         vertical-align: middle;
     }
-    
+
     .scroll-next{
         display: block;
         top: 90vh;
@@ -220,6 +221,7 @@
     #coverPage{
         top: 2rem;
         background-size: 150% auto;
+        background-image: url(https://res.cloudinary.com/miau-vi-be/image/upload/v1538508723/fish/cat.png);
     }
     #show-portfolio{
         width: 30%;
@@ -238,16 +240,16 @@
     h4, h5, h6{
         font-size: 1.4rem;
         line-height: 1.6rem;
-        
+
     }
-    
+
     .material-icons,p, ul li {
         font-size: 1rem;
         line-height: 1.3rem;
     }
     nav{
         overflow: hidden;
-        
+
     }
     nav.active{
         z-index: 101;
@@ -268,7 +270,7 @@
         padding: 0.5rem;
         text-align: center;
     }
-    
+
     footer{
         width: 80px;
         max-height: 80px;
@@ -312,7 +314,7 @@
     }
     section:first-of-type{
         max-width: 100%;
-        
+
     }
     .scroll-next{
         display: block;
@@ -323,7 +325,7 @@
     }
     .quote p{
         font-size: 2rem;
-        
+
     }
     .card{
         width: 100%;
@@ -332,9 +334,10 @@
     #coverPage{
         top: 0;
         background-size: 100% auto;
+        background-image: url(https://res.cloudinary.com/miau-vi-be/image/upload/v1538508723/fish/cat.png);
     }
-    
-    
+
+
     #portfolio-modal{
         z-index: 100;
         width: calc(50vw + calc(calc(calc(1366px / 2) - 500px) - 2rem));
@@ -501,20 +504,3 @@
         height: calc(50% - 40px);
     }
 }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
