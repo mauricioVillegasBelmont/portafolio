@@ -59,15 +59,37 @@ $('section').on('scrollSpy:enter', function() {
 $('section').on('scrollSpy:exit', function() {
     $('a[href = "#'+$(this).attr('id')+'" ]').removeClass('active');
 });
+var firsTimeModalScreen = 0;
+$('section').on('scrollSpy:enter', function() {
+
+   $(this).find('.scroll-next').addClass('active');
+   // /console.log($(this).find('.scroll-next'));
+});
+$('section').on('scrollSpy:exit', function() {
+
+   $(this).find('.scroll-next').removeClass('active');
+});
 $('section#myExperience').on('scrollSpy:enter', function() {
-    $('#show-portfolio').addClass('active');
+   if(window.innerWidth >= 1025){
+      if(firsTimeModalScreen === 0){
+         modalFirstTime();
+      }{
+         $('#show-portfolio').addClass('active');
+
+      }
+    }else {
+      $('#show-portfolio').addClass('active');
+    }
     //console.log('myExperience enter');
 });
 $('section#myExperience').on('scrollSpy:exit', function() {
-    $('#show-portfolio').removeClass('active');
     if($('#portfolio-modal').hasClass('active')){
        closeModal();
     }
+    $('#show-portfolio').removeClass('active');
+   if($('#portfolio-modal').hasClass('sectionEnter')){
+      $('#portfolio-modal').removeClass('sectionEnter');
+   }
     //console.log('myExperience exit');
 });
 $('section').scrollSpy();
@@ -100,12 +122,23 @@ function scrollEvents(cs){
     if($('#portfolio-modal').hasClass('active')){
         //closeModal();
     }
+   //  if(firsTimeModalScreen > 0 && $('#portfolio-modal').hasClass('sectionEnter')){
+   //    $('#portfolio-modal.sectionEnter').removeClass('active');
+   //    $('#portfolio-modal').removeClass('sectionEnter');
+   //    $('#show-portfolio').addClass('active');
+   //    console.log('portfolio closed for scroll');
+   // }
 }
 
+function modalFirstTime(){
+   $('#portfolio-modal').addClass('active');
+   $('#portfolio-modal').addClass('sectionEnter');
 
+   firsTimeModalScreen += 1;
+}
 
 $('#show-portfolio').click(function(){
-    if($('body').width()<= 1024){
+    if(window.innerWidth <= 1024){
        $('body').css("overflow-y", "hidden");
     }
     if($('#portfolio-modal').hasClass('active')){
@@ -171,11 +204,12 @@ function portaNavButton(a , l){
     }
 }
 function closeModal(){
-    if($('body').width()<= 1024){
-       $('body').css("overflow-y", "auto");
-    }
-    stopVideos();
-    $('#portfolio-modal').removeClass('active');
+   $('body').css("overflow-y", "auto");
+   if($('#portfolio-modal').hasClass('sectionEnter')){
+      $('#portfolio-modal').removeClass('sectionEnter');
+   }
+   stopVideos();
+   $('#portfolio-modal').removeClass('active');
 }
 
 function stopVideos(){

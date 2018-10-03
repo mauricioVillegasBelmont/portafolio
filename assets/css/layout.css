@@ -63,6 +63,9 @@
         width: 50px;
         line-height: 100%;
     }
+    #fish{
+        left: 0;
+    }
     #contact-close span{
         display: none;
     }
@@ -90,7 +93,7 @@
     }
     section:first-of-type .scroll-next{
         display: block;
-        top: 85vh;
+        top: 80vh !important;
     }
     .quote p{
         font-size: 1.5rem;
@@ -183,6 +186,9 @@
         width: 50px;
         line-height: 100%;
     }
+    #fish{
+        left: 0;
+    }
     #contact-close span{
         display: none;
     }
@@ -203,8 +209,7 @@
         vertical-align: middle;
     }
 
-    .scroll-next{
-        display: block;
+    .scroll-next.active{
         top: 90vh;
     }
     blockquote{
@@ -287,6 +292,9 @@
         width: 80px;
         line-height: 100%;
     }
+    #fish{
+        left: 15%;
+    }
     #contact-close p{
         position: relative;
         height: 100%;
@@ -309,15 +317,14 @@
         vertical-align: middle;
     }
     section{
-        max-width: 1366px;
+        max-width: 1024px;
         margin: 0 auto;
     }
     section:first-of-type{
         max-width: 100%;
 
     }
-    .scroll-next{
-        display: block;
+    .scroll-next.active{
         top: 93vh;
     }
     blockquote{
@@ -338,10 +345,16 @@
     }
 
 
+    #show-portfolio{
+        /*--checar aqui si es necesario--*/
+
+    }
+
     #portfolio-modal{
         z-index: 100;
         width: calc(50vw + calc(calc(calc(1366px / 2) - 500px) - 2rem));
-        background-color: rgba(0,0,0,0.3);
+        padding: 10rem 2rem 10vh 2rem !important;
+        /* background-color: rgba(0,0,0,0.3); */
     }
     #portfolio-modal .modal-container{
         height: 100%;/**/
@@ -350,7 +363,7 @@
         z-index: 1001;/**/
     }
     #portfolio-modal .navigationControler{
-        top: 70%;
+        top: 60%;
         height: 40px;/**/
     }
     #portfolio-modal .btn{
@@ -365,13 +378,13 @@
     }
     .modal-container .items .display{
         width: 100%;
-        height: 70%;
+        height: 60%;
     }
     .modal-container .items .info{
         width: 100%;
         margin-top: 40px;/**/
         padding: 2rem 3rem;
-        height: calc(30% - 40px);/**/
+        height: calc(40% - 38px);/**/
         flex-wrap: wrap;
         -webkit-border-radius: 0 0 10px 10px;
         -moz-   border-radius: 0 0 10px 10px;
@@ -387,6 +400,9 @@
 }
 
 @media only screen and (max-width: 1024px) and (orientation: landscape){
+    #fish{
+        left: 10%;
+    }
     #portfolio-modal{
         z-index: 100;
         width: 100%;/**/
@@ -416,11 +432,11 @@
         height: 100%;/**/
     }
     .modal-container .items .display{
-        width: 70%;
+        width: 60%;
         height: 100%;
     }
     .modal-container .items .info{
-        width: 30%;
+        width: 40%;
         height: 100%;/**/
         margin-top: 0;/**/
         padding: 1.5rem;
@@ -433,6 +449,7 @@
         flex: 0 1 100%;
     }
     .modal-container .items .info a{
+        margin-left: 0 !important;
         line-height: 1.5rem;
         flex: 1 0 100%;
     }
@@ -488,19 +505,3 @@
         flex: 1 0 50%;
     }
 }
-
-/*
-@media only screen and (max-width: 768px) and (min-height 1366px) and (orientation: portrait){
-    #portfolio-modal .modal-container .item.active{
-        display: block;
-    }
-    #portfolio-modal .navigationControler{
-        top:50%;
-    }
-    .modal-container .items .display{
-        height: 50%;
-    }
-    .modal-container .items .info{
-        height: calc(50% - 40px);
-    }
-}*/
