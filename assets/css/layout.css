@@ -63,8 +63,8 @@
         width: 50px;
         line-height: 100%;
     }
-    #fish{
-        left: 0;
+    #fish.active{
+        left: 0 !important;
     }
     #contact-close span{
         display: none;
@@ -98,9 +98,9 @@
     .quote p{
         font-size: 1.5rem;
     }
-    .card{
+    .card, .items-wrapper{
         width: 100%;
-        max-width: calc(320px - 2rem);
+        /* max-width: calc(320px - 2rem); */
 
     }
     #coverPage{
@@ -186,8 +186,8 @@
         width: 50px;
         line-height: 100%;
     }
-    #fish{
-        left: 0;
+    #fish.active{
+        left: 0 !important;
     }
     #contact-close span{
         display: none;
@@ -218,7 +218,7 @@
     blockquote p{
         font-size: 1.5rem;
     }
-    .card{
+    .card, .items-wrapper{
         width: 100%;
         max-width: calc(400px - 2rem);
 
@@ -292,8 +292,8 @@
         width: 80px;
         line-height: 100%;
     }
-    #fish{
-        left: 15%;
+    #fish.active{
+        left: 15% !important;
     }
     #contact-close p{
         position: relative;
@@ -334,7 +334,7 @@
         font-size: 2rem;
 
     }
-    .card{
+    .card, .items-wrapper{
         width: 100%;
         max-width: calc(400px - 2rem);
     }
@@ -400,8 +400,8 @@
 }
 
 @media only screen and (max-width: 1024px) and (orientation: landscape){
-    #fish{
-        left: 10%;
+    #fish.active{
+        left: 10% !important;
     }
     #portfolio-modal{
         z-index: 100;

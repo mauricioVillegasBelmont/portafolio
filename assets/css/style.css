@@ -289,7 +289,7 @@ section{
     min-height: 120vh;
     padding-top: 10vh;
     padding-bottom: 190vh;
-    overflow-x: visible; 
+    overflow-x: visible;
 }
 
 section>h1 {
@@ -355,7 +355,6 @@ section.message{
 }
 
 .card{
-
     background-blend-mode: multiply;
     user-select: none;
     padding: 1rem;
@@ -423,6 +422,36 @@ button.card i{
   background-image: url(../img/backgrounds/skill-card.png);
 }
 
+.items-wrapper {
+  padding: 1rem;
+  margin: 0 0 1rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.card-item{
+  width: calc(50% - 1rem);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-item h6{
+  min-height: 75px;
+}
+.card-item img{
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  max-height: 200px;
+  border-radius: 0.5rem;
+  box-shadow: 2px 5px 2px rgba(0,0,0,0.5);
+}
+
 #video-wrapper{
   display: block;
     width: 100%;
@@ -448,6 +477,8 @@ button.card i{
 }
 
 #fish{
+    left: 50%;
+    transform: translateX(-50%);
     width: auto;
     height: 100%;
     display: block;
@@ -459,6 +490,7 @@ button.card i{
 }
 #fish.active{
   opacity: 0.9;
+  transform: translateX(0);
 
 }
 canvas{
