@@ -96,16 +96,6 @@ blockquote:after{
     content: '”.'
 
 }
-.quote p{
-    max-width: 75%;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    text-align: right;
-    margin: 1em auto 0 auto;
-}
-.quote p:before{
-    content: '– '
-}
 
 nav{
     pointer-events: none;
@@ -286,10 +276,11 @@ footer .info{
 section{
     position: relative;
     padding: 1rem;
-    min-height: 120vh;
+    min-height: 110vh;
     padding-top: 10vh;
-    padding-bottom: 190vh;
+    padding-bottom: 10vh;
     overflow-x: visible;
+    margin-bottom: 105vh;
 }
 
 section>h1 {
@@ -299,7 +290,7 @@ section>h1 {
 
 section:last-of-type{
     padding-bottom: 5vh !important;
-
+    margin-bottom: 0 !important;
 }
 section.message{
     overflow: hidden;
@@ -431,8 +422,11 @@ button.card i{
 
 }
 
+.items-wrapper h4{
+  width: 100%;
+}
+
 .card-item{
-  width: calc(50% - 1rem);
   padding: 1rem;
   display: flex;
   flex-direction: column
@@ -470,7 +464,7 @@ button.card i{
 }
 
 .card-item img{
-  margin: 1rem 0;
+  margin: 1rem auto;
   width: 100%;
   max-width: 200px;
   height: auto;
@@ -536,10 +530,22 @@ canvas{
     opacity: 1;
 }
 .quote{
-    padding-top: 40vh;
-    padding-bottom: 160vh;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20vh;
 }
-
+.quote p{
+    max-width: 75%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 1em auto 0 auto;
+}
+.quote p:before{
+    content: '– '
+}
 
 
 #portfolio-modal{
