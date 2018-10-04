@@ -100,8 +100,11 @@
     }
     .card, .items-wrapper{
         width: 100%;
-        /* max-width: calc(320px - 2rem); */
+        max-width: 380px;
 
+    }
+    .card-item{
+        width: calc(50% - 1rem);
     }
     #coverPage{
         top: 2rem;
@@ -223,6 +226,9 @@
         max-width: calc(400px - 2rem);
 
     }
+    .card-item{
+        width: calc(33% - 1rem);
+    }
     #coverPage{
         top: 2rem;
         background-size: 150% auto;
@@ -339,8 +345,10 @@
         max-width: calc(400px - 2rem);
     }
     .items-wrapper{
-        width: 100%;
-        max-width: calc(50% - 2rem);
+        width: calc(60% - 1rem);
+    }
+    .card-item{
+        width: calc(33% - 1rem);
     }
     #coverPage{
         top: 0;
@@ -459,6 +467,12 @@
     }
     #show-portfolio{
         width: 30%;
+    }
+    .card, .items-wrapper{
+        width: 60%;
+    }
+    .card-item{
+        width: calc(50% - 1rem);
     }
 }
 
