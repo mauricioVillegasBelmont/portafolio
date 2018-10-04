@@ -23,7 +23,7 @@ $('#contact-close').on('click',function(){
 //phrases
 var p = Math.floor(Math.random() * vision.length) + 0 ;
 $('#vision blockquote').html(vision[p][0]);
-$('#vision').append('<p>'+vision[p][1]+'</p>');
+$('#vision').append('<p class="animated">'+vision[p][1]+'</p>');
 
 //scroll transition
 $("#nav a").click( function(event) {
@@ -69,6 +69,37 @@ $('section').on('scrollSpy:exit', function() {
 
    $(this).find('.scroll-next').removeClass('active');
 });
+
+$('.animation-opacity').on('scrollSpy:enter', function() {
+   $(this).find('.animated').each(function(index) {
+     (function(that, i) {
+        if(!$(that).hasClass('flipInX')){
+         var t = setTimeout(function() {
+//.animation-fadeInRight
+               $(that).addClass('opacity1')
+               $(that).addClass('flipInX')
+         }, 1000 * i);
+      }
+     })(this, index);
+// });
+
+   });
+});
+
+$('.animation-fadeInRight').on('scrollSpy:enter', function() {
+   $(this).find('.animated').each(function(index) {
+     (function(that, i) {
+        if(!$(that).hasClass('fadeInRight')){
+         var t = setTimeout(function() {
+//.animation-fadeInRight
+               $(that).addClass('fadeInRight')
+         }, 100 * i);
+      }
+     })(this, index);
+// });
+
+   });
+});
 $('section#myExperience').on('scrollSpy:enter', function() {
    if(window.innerWidth >= 1025){
       if(firsTimeModalScreen === 0){
@@ -90,7 +121,7 @@ $('section#myExperience').on('scrollSpy:exit', function() {
    if($('#portfolio-modal').hasClass('sectionEnter')){
       $('#portfolio-modal').removeClass('sectionEnter');
    }
-    //console.log('myExperience exit');
+
 });
 $('section').scrollSpy();
 

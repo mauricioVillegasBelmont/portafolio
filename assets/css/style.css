@@ -43,6 +43,7 @@
 }
 body{
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 
@@ -279,7 +280,8 @@ section{
     min-height: 110vh;
     padding-top: 10vh;
     padding-bottom: 10vh;
-    overflow-x: visible;
+    /* overflow-x: visible; */
+    overflow-x: hidden;
     margin-bottom: 105vh;
 }
 
@@ -360,6 +362,15 @@ section.message{
      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
         0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
 }
+.animated{
+  opacity: 0;
+}
+.opacity1{
+  opacity: 1!important;
+}
+
+
+
 #myExperience .card:last-of-type{
     margin-top: 200px;
 }
@@ -536,12 +547,15 @@ canvas{
     align-items: center;
     flex-direction: column;
     padding-bottom: 20vh;
+
 }
+
 .quote p{
     max-width: 75%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     margin: 1em auto 0 auto;
+
 }
 .quote p:before{
     content: '– '
