@@ -1,0 +1,29 @@
+
+@mixin aspect-ratio($rw,$rh){
+  --asr_w:$rw;
+  --asr_h:$rh;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: calc( ( var(--asr_h) / var(--asr_w) ) * 100%);
+    @extend %z--n !optional;
+  }
+}
+@mixin ratio_maxWidth($mheigh, $rw:false,$rh:false){
+  @if ($rw) {--asr_w:$rw;}
+  @if ($rh) {--asr_h:$rh;}
+  --as_max_h: $mheigh;
+  max-width: calc( calc( var(--as_max_h) * var(--asr_h) ) / var(--asr_w) );
+}
+@mixin ratio_maxHeight($mWidth, $rw:false,$rh:false){
+  @if ($rw) {--asr_w:$rw;}
+  @if ($rh) {--asr_h:$rh;}
+  --as_max_w: $mWidth;
+  max-height: calc( calc( var(--as_max_w) * var(--asr_h) ) / var(--asr_w) );
+}
+@mixin asr-set-min-height($rw,$rh,$w){
+  min-height: #{ _divide( ($w*$rh),$rw) };
+}
+@mixin asr-set-max-height($rw,$rh,$w){
+  min-height: #{ _divide(($w*$rh),$rw) };
+}

@@ -1,0 +1,26 @@
+$root_colors: true;
+$color_list : (
+  "white"    : #FFFFFF,
+  "black"    : #1c1c1c,
+  "charcoal"    : #3C4142,
+  "dark"    : #303536,
+  "gray"    : #86898d,
+  "gray-light"    : #cecece,
+  "gray-extralight"    : #f1f1f1,
+  "danger"    : #DC3545,
+  "success"    : #28A745,
+
+  "flush-mahogany": #cd3c3c,
+  "turquoise": #3ccbcd,
+);
+$state_colors:(
+  'white',
+  "danger",
+  "success",
+  "alert",
+  'Picton',
+);
+
+$alpha_steps: 4; // valores ente 1 y 10
+$darken_steps: 4; // valores ente 1 y 10
+$lightness_steps: 4; // valores ente 1 y 10

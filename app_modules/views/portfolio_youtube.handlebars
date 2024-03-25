@@ -1,0 +1,54 @@
+<div class="header p--relative d--flex justify__content--space-around ff--ubuntu fs--large fw--bold flex__grow--0 bg__black c__white w--100 py--3 px--7 z--fixed">
+<h1 class="d--inline">Sitio en construcción</h1>
+<p class="d--inline"><a href="/">regresar</a></p>
+
+</div>
+<div id="player"></div>
+<details id="details" class="main--container wrapper__readable--45-75 p--fixed bottom--0 right--0 mt--auto mr--lg--5 bg__black c__white z--fixed">
+  <summary class="py--5 px--6">Detalles:</summary>
+  <div class="py--5 px--6">
+    <h1 class="h3">{{name}}</h1>
+    <p>Cliente: {{cliente}}</p>
+    <p><a href="{{url}}" target="_blank" rel="noopener norefer">Ver online</a></p>
+
+    <ul>
+    {{#each specs}}
+      <li>{{this}}</li>
+    {{/each}}
+    </ul>
+    <div class="">
+      {{#raw descripcion}}{{/raw}}
+    </div>
+  </div>
+</details>
+<script>
+  const videoId ='{{id}}';
+  const frameId ='player';
+
+  class Player {
+      constructor(frameId, videoId) {
+        this.frameId = frameId;
+        this.videoId = videoId;
+      }
+      init() {
+        const self = this;
+        this.player = new YT.Player(self.frameId, {
+          height: '360',
+          width: '640',
+          videoId: self.videoId,
+          events: {
+            'onReady': self.onPlayerReady,
+          }
+        });
+      }
+      onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    }
+
+    const player = new Player(frameId, videoId);
+    function onYouTubeIframeAPIReady() {
+      player.init();
+    }
+
+</script>

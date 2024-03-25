@@ -1,0 +1,245 @@
+
+@include font_family_generator();
+
+@include texttags-default-setup(){
+  @extend %font-format;
+}
+
+.h1{
+  --fs-value: 6.25rem;
+}
+.h2{
+  --fs-value: 3.4375rem;
+}
+.h3{
+  --fs-value: 2.8125rem;
+}
+.h4{
+  --fs-value: 2.5rem;
+}
+.h5{
+  --fs-value: 2.1875rem;
+}
+.h6{
+  --fs-value: 1.4rem;
+}
+
+// _font_clamp_calc($min, $max, $max_b_key: lg, $min_b_key: xs)
+.fs__clamp--1{
+  --fs-value: #{_font_clamp_calc(1.75rem, 3.5rem, lg, xs)};
+}
+.fs__clamp--2{
+  --fs-value: #{_font_clamp_calc(1.75rem, 2rem, lg)};
+}
+.fs__clamp--3{
+  --fs-value: #{_font_clamp_calc(1.0625rem, 1.25rem)};
+}
+
+
+.fs--extralarge{
+  --fs-value: calc(#{$gobal_font_size} * 1.75);
+}
+.fs--large{
+  --fs-value: calc(#{$gobal_font_size} * 1.5);
+}
+.fs--medium{
+  --fs-value: calc(#{$gobal_font_size} * 1.25);
+}
+.text,.fs--normal{
+  --fs-value: #{$gobal_font_size};
+}
+small,.fs--small{
+  --fs-value: calc(#{$gobal_font_size} * .875);
+}
+.fs--extrasmall{
+  --fs-value: calc(#{$gobal_font_size} * .75);
+}
+
+
+@include  oocss_extend_generator('fw', '', (), $font_weights, 'font-weight', false, $font_weight_utilities);
+@include font_weight_defaults();
+
+
+@include  oocss_extend_generator('fs', '', (), $font_styles, 'font-style', false, true);
+em{
+  @extend %fs--italic;
+}
+
+
+
+u,ins,
+.text--underline,.hover-text--underline:hover{
+  text-decoration: underline;
+}
+.box--underline{
+  border: 0;
+  border-bottom: 1px solid;
+}
+.hover-box--underline{
+  border: 0;
+  @include hover(){
+    border-bottom: 1px solid;
+  }
+}
+del,strike, s,
+.text--strike{
+  text-decoration: line-through;
+}
+
+
+%perfect_square_char{
+  width: calc(var(--fs-value) * var(--scale));
+  height: calc(var(--fs-value) * var(--scale));
+}
+%icon-font{
+  speak: never;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+%icon-list{
+  @extend %icon-font;
+  font-size: calc(var(--fs-value) * var(--scale));
+}
+menu,ul,ol{
+  &.inset{
+    list-style-position: outside;
+  }
+  &.outset{
+    list-style-position: inside;
+  }
+}
+
+%tick{ content: quote(#{ $icon-check-mark  +  "\00a0" }); }
+%chevron{ content: quote( #{  $icon-chevron-right  +  "\00a0"}); }
+%bullet{ content: quote( #{  $icon-bullet  +  "\00a0"}); }
+%middleScore { content: quote( #{  $icon-middlescore  +  "\00a0"}); }
+
+.bulletted{
+  // bulletted__marker
+  &__marker{
+    &.tick::marker{
+      @extend %icon-list;
+      @extend %tick;
+    }
+    &.chevron::marker{
+      @extend %icon-list;
+      @extend %chevron;
+    }
+    &.bullet::marker{
+      @extend %icon-list;
+      @extend %bullet;
+    }
+    &.middleScore::marker{
+      @extend %icon-list;
+      @extend %middleScore;
+    }
+  }
+  // bulletted___list
+  &__list{
+    &.tick{
+      li::marker{
+        @extend %icon-list;
+        @extend %tick;
+      }
+    }
+    &.chevron{
+      li::marker{
+        @extend %icon-list;
+        @extend %chevron;
+      }
+    }
+    &.middleScore{
+      li::marker{
+        @extend %icon-list;
+        @extend %middleScore;
+      }
+    }
+    &.bullet{
+      list-style-type: disc;
+    }
+    &.circle{
+      list-style-type: circle;
+    }
+    &.numbers{
+      list-style-type: decimal;
+    }
+  }
+  // bulletted___detaled_list
+  &__detailed_list{
+    &.tick > dd::before{
+      @extend %icon-list;
+      @extend %tick;
+    }
+    &.chevron > dd::before{
+      @extend %icon-list;
+      @extend %chevron;
+    }
+    &.bullet > dd::before{
+      @extend %icon-list;
+      @extend %bullet;
+    }
+  }
+  // bulletted__item
+  &__item{
+    &.tick::before{
+      @extend %icon-list;
+      @extend %tick;
+    }
+    &.chevron::before{
+      @extend %icon-list;
+      @extend %chevron;
+    }
+    &.bullet::before{
+      @extend %icon-list;
+      @extend %bullet;
+    }
+  }
+}
+
+@include selector_extendible_generator( 'text','',('break')){
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+.wrapper__content{
+  &.safe-read{
+    @extend %wrapper__readable--min;
+  }
+  p:not(:last-child){
+    margin-bottom: calc(var(--fs-value) * 1.25);
+  }
+  li:not(:last-child){
+    margin-bottom: calc(var(--fs-value) * 1.25);
+  }
+  a{
+    @extend %text--break;
+  }
+}
+a[href^="http://"],
+a[href^="https://"],
+a[target="_blank"]{
+  @extend %text--break;
+}
+
+
+
+@include selector_content_generator('text','overflow','','%'){
+  white-space: nowrap;
+  overflow: hidden;
+}
+.text__overflow--elipsis{
+  @extend %text__overflow;
+  text-overflow: ellipsis;
+}
+.text__overflow--clip{
+  @extend %text__overflow;
+  text-overflow: clip;
+}
+
+
+
+@include  oocss_extend_generator_full('text', '', (), $text_align_array, 'text-align', false, $text_align_utilities);

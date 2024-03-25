@@ -1,0 +1,12 @@
+.scroll-wrapper{
+  @extend %overflow-scroll;
+}
+.clearfix {
+  @include clearfix();
+}
+.o--hidden{
+  overflow: hidden;
+}
+.v--hidden{
+  visibility: hidden;
+}

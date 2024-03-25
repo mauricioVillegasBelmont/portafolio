@@ -1,0 +1,20 @@
+@include global_color_classes($color_list);
+@include alpha_colors_generator($state_colors, $alpha_steps);
+
+
+
+@include color_mixer_class();
+@include color_mix_generator();
+@include color_mix_generator('mix_test','success',.75,'danger',.25);
+
+@include selector_extendible_generator('grad','',()){
+  &__test{
+    @include linear-gradient(to bottom, #1e5799 0%,#7db9e8 100%);
+  }
+}
+
+
+  .bg__frosted{
+    --_alpha:.875;
+    backdrop-filter: blur(5px);
+  }

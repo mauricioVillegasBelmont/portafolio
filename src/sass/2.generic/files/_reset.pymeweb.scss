@@ -1,0 +1,74 @@
+html,body{
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+body{
+  &, & *,& *::after,& *::before{
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+  }
+  line-height: var(--f-linehight-value);
+  font-family: #{map-get($font-families, "default")};
+  color: color_var('dark');
+  &, %font-format{
+    font-size: var(--fs-value) !important;
+    color: inherit;
+  }
+
+}
+input,select, textarea{
+  font-family: inherit;
+  @extend %font-format;
+}
+img,svg,canvas,video,object,picture{
+  user-select: none;
+  width: 100%;
+}
+img,object,figure,picture,video{
+  object-fit: cover;
+  @extend %cover_contain;
+}
+%cover_contain{
+  &.contain{
+    object-fit: contain;
+  }
+  &.cover{
+    object-fit: cover;
+  }
+}
+dialog,%dialog{
+  &::backdrop {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,.75);
+  }
+}
+summary{
+  cursor: pointer;
+  user-select: none;
+}
+button,a{
+  @extend %font-format;
+  text-decoration: none;
+  background-color: transparent;
+  @include focus(){
+    outline: 0;
+  }
+  @include disabled(){
+    cursor: auto;
+    pointer-events: none;
+  }
+  &>img,&>svg,&>canvas,&>object,&>figure,&>picture,&>video {
+    pointer-events: none;
+    border: none;
+  }
+}
+
+
+sub{ vertical-align: sub;}
+sup{ vertical-align: super;}
+hr{ border: 0;}

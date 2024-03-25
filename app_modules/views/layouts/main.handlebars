@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+    <title>{{TITLE}}</title>
+
+    <link rel="icon" href="/site_media/img/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="/site_media/fonts/Ubuntu-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/site_media/fonts//Bitter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/site_media/css/main.bundle.css">
+    <noscript>
+      <link rel="stylesheet" href="/site_media/css/main.bundle.css" />
+    </noscript>
+
+    {{#each STYLESHEETS}}
+    <link {{#if  preload}}  rel="stylesheet" {{/if}} href="{{href}}" >
+    {{/each}}
+    {{#each HEADER_SCRIPTS}}
+    <script  {{#if _nonce }}nonce="{{nonce}}"{{/if}} {{#if _defer }}defer="true"{{/if}} src="{{src}}"></script>
+    {{/each}}
+  </head>
+  <body class="{{body_classes}}">
+    {{{body}}}
+    {{#each FOOTER_SCRIPTS}}
+    <script {{#if _defer}}defer="true"{{/if}} src="{{src}}"></script>
+    {{/each}}
+  </body>
+</html>
