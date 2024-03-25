@@ -1,8 +1,12 @@
 {
-  "name": "Miau's - portfolio",
+  "name": "miaus - portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "portafolio de trabajo de mauricio villegas belmont",
+  "main": "app_engine.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mauricioVillegasBelmont/portafolio.git"
+ },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "node app_engine.js",
