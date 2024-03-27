@@ -19,7 +19,7 @@ const verifyReCaptcha = async function(req, res, next) {
     console.error(error);
     res.status(400).json({
       status: 'fail',
-      message:`¡Algo salio mal!. tambien puedes contactarme en <a href="mailto:${SENDGRID_TO}" class="text--underline">${SENDGRID_TO}</a>.`,
+      message:`¡Algo salio mal!. tambien puedes contactarme en <a href="mailto:${process.env.SENDGRID_TO}" class="text--underline">${process.env.SENDGRID_TO}</a>.`,
       errors: error
     });
     return;
