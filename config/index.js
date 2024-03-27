@@ -1,9 +1,15 @@
 const path = require('path');
 const dotenv = require('dotenv');
-const result = dotenv.config();
-if (result.error) {
-  throw result.error;
+const fs = require('fs');
+
+const envFilePath = path.resolve(__basedir, '.env');
+if (fs.existsSync(envFilePath)) {
+  const result = dotenv.config();
+  if (result.error) {
+    throw result.error;
+  }
 }
+
 
 
 

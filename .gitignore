@@ -57,7 +57,7 @@ Icon
 *.code-workspace
 
 #node
-#.env
+.env
 .env.back
 .env.dist
 
