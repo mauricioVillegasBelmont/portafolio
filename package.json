@@ -31,9 +31,7 @@
     "mysql2": "^3.9.2",
     "php-serialize": "^4.1.1",
     "sequelize": "^6.37.1",
-    "three": "^0.161.0"
-  },
-  "devDependencies": {
+    "three": "^0.161.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.10.0",
     "ismobilejs": "^1.1.1",

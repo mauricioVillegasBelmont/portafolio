@@ -12,7 +12,7 @@ module.exports = {
     'layout.bundle':'./src/layout.js',
   },
   output: {
-    path: path.resolve(__dirname, `public`),
+    path: path.resolve(__dirname, `${process.env.WEBPACK_OUTPUT}`),
     filename: '[name].js',
     clean: true,
   },
@@ -29,7 +29,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, `public`),
+      directory: path.join(__dirname, `${process.env.WEBPACK_OUTPUT}`),
     },
     compress: true,
     port: 9000,
@@ -48,11 +48,11 @@ module.exports = {
       patterns: [
         {
           from: "src/img/",
-          to: path.resolve( __dirname, `./public/img/`),
+          to: path.resolve( __dirname, `./${process.env.WEBPACK_OUTPUT}/img/`),
         },
         {
           from: "src/fonts/",
-          to: path.resolve( __dirname, `./public/fonts/`),
+          to: path.resolve( __dirname, `./${process.env.WEBPACK_OUTPUT}/fonts/`),
         },
       ],
     }),
