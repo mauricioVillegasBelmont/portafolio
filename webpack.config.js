@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 
-require('dotenv').config({ path: './.env' });
+// require('dotenv').config({ path: './.env' });
 module.exports = {
 
   mode: 'production',
@@ -12,7 +12,7 @@ module.exports = {
     'layout.bundle':'./src/layout.js',
   },
   output: {
-    path: path.resolve(__dirname, `${process.env.WEBPACK_OUTPUT}`),
+    path: path.resolve(__dirname, `public`),
     filename: '[name].js',
     clean: true,
   },
@@ -29,7 +29,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, `${process.env.WEBPACK_OUTPUT}`),
+      directory: path.join(__dirname, `public`),
     },
     compress: true,
     port: 9000,
@@ -48,11 +48,11 @@ module.exports = {
       patterns: [
         {
           from: "src/img/",
-          to: path.resolve( __dirname, `./${process.env.WEBPACK_OUTPUT}/img/`),
+          to: path.resolve( __dirname, `./public/img/`),
         },
         {
           from: "src/fonts/",
-          to: path.resolve( __dirname, `./${process.env.WEBPACK_OUTPUT}/fonts/`),
+          to: path.resolve( __dirname, `./public/fonts/`),
         },
       ],
     }),
