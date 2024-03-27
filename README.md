@@ -19,6 +19,10 @@ Este sitio fue desarrollado en Express principalmente para mostrar la capacidad 
 * Build the proyect before start/startdev.
 
 
+```console
+$ npm install
+```
+
 ### Building for source
 
  1 | Copy `.env.dist` to `.env`, then fill in with your own environment variables.
