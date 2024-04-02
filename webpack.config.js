@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 
-// require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: './.env' });
 module.exports = {
 
   mode: 'production',
@@ -21,7 +21,7 @@ module.exports = {
     maxAssetSize: 1024000
   },
 
-  watch: false,
+  watch: true,
   watchOptions: {
     ignored: /node_modules/,
     poll: 1000, // Check for changes every second

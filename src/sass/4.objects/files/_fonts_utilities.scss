@@ -109,6 +109,13 @@ menu,ul,ol{
     list-style-position: inside;
   }
 }
+i.icon{
+  @extend %icon-font;
+  img{
+    width: calc(var(--fs-value) * var(--scale));
+    height: calc(var(--fs-value) * var(--scale));
+  }
+}
 
 %tick{ content: quote(#{ $icon-check-mark  +  "\00a0" }); }
 %chevron{ content: quote( #{  $icon-chevron-right  +  "\00a0"}); }
