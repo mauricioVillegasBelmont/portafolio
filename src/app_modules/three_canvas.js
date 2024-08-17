@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 class ThreeEnvironment{
 
@@ -40,12 +40,24 @@ class ThreeEnvironment{
 
 
 
-    this.camera.position.set( 0, 0, 2.5 );
+    // this.camera.position.set( 0, 0, 2.5 );
     this.controls = new OrbitControls( this.camera, this.renderer.domElement );
     this.controls.minDistance = 1.5;
     this.controls.maxDistance = 6;
 
-
+    const loader = new GLTFLoader();
+    // console.log(`${assets_path}/models/butrefly-test.glb`);
+    loader.load(
+      `${assets_path}/models/butrefly-test.glb`,
+      function (gltf) {
+        console.log(gltf);
+        this.scene.add(gltf.scene);
+      },
+      undefined,
+      function (error) {
+        console.error(error);
+      }
+    );
 
 
 

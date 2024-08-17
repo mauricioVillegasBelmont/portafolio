@@ -3,28 +3,27 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 
-require('dotenv').config({ path: './.env' });
-module.exports = {
 
-  mode: 'production',
+module.exports = {
+  mode: ${process.env.MODE},
   entry: {
-    'main.bundle':'./src/index.js',
-    'layout.bundle':'./src/layout.js',
+    "main.bundle": "./src/index.js",
+    "layout.bundle": "./src/layout.js",
   },
   output: {
     path: path.resolve(__dirname, `${process.env.WEBPACK_OUTPUT}`),
-    filename: '[name].js',
+    filename: "[name].js",
     clean: true,
   },
   performance: {
     maxEntrypointSize: 1024000,
-    maxAssetSize: 1024000
+    maxAssetSize: 1024000,
   },
 
-  watch: false,
+  watch: (process.env.NODE_ENV === "development"),
   watchOptions: {
     ignored: /node_modules/,
-    poll: 1000, // Check for changes every second
+    poll: 500, // Check for changes every second
   },
 
   devServer: {
@@ -36,42 +35,39 @@ module.exports = {
     hot: true,
   },
 
-
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: 'css/[name].css',
+      filename: "css/[name].css",
       chunkFilename: "[id].css",
     }),
     new CopyPlugin({
       patterns: [
         {
           from: "src/img/",
-          to: path.resolve( __dirname, `./${process.env.WEBPACK_OUTPUT}/img/`),
+          to: path.resolve(__dirname, `./${process.env.WEBPACK_OUTPUT}/img/`),
         },
         {
           from: "src/fonts/",
-          to: path.resolve( __dirname, `./${process.env.WEBPACK_OUTPUT}/fonts/`),
+          to: path.resolve(__dirname, `./${process.env.WEBPACK_OUTPUT}/fonts/`),
         },
       ],
     }),
     new webpack.DefinePlugin({
-      STATIC_DIR: JSON.stringify( process.env.STATIC_DIR ),
-    })
+      STATIC_DIR: JSON.stringify(process.env.STATIC_DIR),
+    }),
   ],
-
 
   module: {
     rules: [
-
       {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           // 'style-loader',
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               url: false,
               // sourceMap: true,
@@ -85,17 +81,12 @@ module.exports = {
               sourceMap: true,
               // sourceMapContents: false,
               sassOptions: {
-                outputStyle: 'compressed',
+                outputStyle: "compressed",
               },
             },
           },
         ],
-        include: path.resolve(__dirname, '../'),
       },
-
-
     ],
   },
-
-
-}
+};

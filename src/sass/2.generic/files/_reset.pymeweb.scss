@@ -4,6 +4,9 @@ html,body{
   min-height: 100dvh;
 }
 body{
+  line-height: var(--f-linehight-value);
+  font-family: #{map-get($font-families, "default")};
+  color: color_var('dark');
   &, & *,& *::after,& *::before{
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -12,9 +15,7 @@ body{
     text-rendering: optimizeLegibility;
     box-sizing: border-box;
   }
-  line-height: var(--f-linehight-value);
-  font-family: #{map-get($font-families, "default")};
-  color: color_var('dark');
+
   &, %font-format{
     font-size: var(--fs-value) !important;
     color: inherit;

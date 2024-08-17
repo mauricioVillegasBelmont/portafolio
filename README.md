@@ -1,4 +1,6 @@
-## Comentarios del autor:
+# Portafolio Mauricio villegas'.'
+
+## Comentarios del autor':'
 
 El propósito de este sitio es informar a posibles colaboradores y personal de reclutamiento sobre mis habilidades y trayectoria como desarrollador y diseñador web. Actualmente, se considera como un sitio en construcción por parte del autor, ya que aún no cuenta con el diseño e interactividad que busco para mi producto final.
 
@@ -6,21 +8,19 @@ El propósito de este sitio es informar a posibles colaboradores y personal de r
 
 - Es importante destacar que, desde la perspectiva del autor, las imágenes generadas por inteligencia artificial son consideradas como meras herramientas para el arte y no como el arte en sí mismo.
 
-
-## Acerca de este proyecto:
+## Acerca de este proyecto':'
 
 Este proyecto fue diseñado pensando en flujos de arquitectura Modelo-Vista-Controlador (MVC), así como en la integración de middlewares centrados en seguridad básica. El objetivo principal era demostrar habilidad y conocimiento adquiridos a través de la experiencia.
 
 Este sitio fue desarrollado en Express principalmente para mostrar la capacidad de trasladar habilidades desde un modelo LAMP hacia uno MERN, así como para tener un mayor acercamiento a las tecnologías de Node.js, como parte de los objetivos de desarrollo personal.
 
+## Before start':'
 
-## Before start:
-* Set the environment variables first.
-* Build the proyect before start/startdev.
-
+-*Set the environment variables first.
+-*Build the proyect before start/startdev.
 
 ```console
-$ npm install
+npm install
 ```
 
 ### Building for source
@@ -30,9 +30,8 @@ $ npm install
  2 | run the `build command`.
 
 ```console
-$ npm run build
+npm run build
 ```
-
 
 ### Start dev
 
@@ -41,7 +40,7 @@ $ npm run build
  2 | run the `start dev command`.
 
 ```console
-$ npm run startdev
+npm run startdev
 ```
 
 ### Start
@@ -51,9 +50,9 @@ $ npm run startdev
  2 | run the `start command`.
 
 ```console
-$ npm run start
+npm run start
 ```
 
-
 ### Start y startdev
+
 > Nota: `Sendgrid API key` y `reCaptcha API key` es requerido para el formulario de contacto

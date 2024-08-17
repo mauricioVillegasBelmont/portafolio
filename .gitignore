@@ -64,3 +64,5 @@ Icon
 node_modules
 */node_modules/*
 /public/uploads/*
+/public/*
+package-lock.json
