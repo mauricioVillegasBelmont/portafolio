@@ -3,9 +3,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
 
-
+require("dotenv").config({ path: "./.env" });
 module.exports = {
-  mode: ${process.env.MODE},
+  mode: `${process.env.NODE_ENV}`,
   entry: {
     "main.bundle": "./src/index.js",
     "layout.bundle": "./src/layout.js",
@@ -20,7 +20,7 @@ module.exports = {
     maxAssetSize: 1024000,
   },
 
-  watch: (process.env.NODE_ENV === "development"),
+  watch: process.env.NODE_ENV === "development",
   watchOptions: {
     ignored: /node_modules/,
     poll: 500, // Check for changes every second
@@ -37,8 +37,6 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "css/[name].css",
       chunkFilename: "[id].css",
     }),
