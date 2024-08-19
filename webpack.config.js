@@ -50,6 +50,20 @@ module.exports = {
           from: "src/fonts/",
           to: path.resolve(__dirname, `./${process.env.WEBPACK_OUTPUT}/fonts/`),
         },
+        {
+          from: "src/models/",
+          to: path.resolve(
+            __dirname,
+            `./${process.env.WEBPACK_OUTPUT}/models/`
+          ),
+        },
+        {
+          from: "src/localPages/",
+          to: path.resolve(
+            __dirname,
+            `./${process.env.WEBPACK_OUTPUT}/pages/`
+          ),
+        },
       ],
     }),
     new webpack.DefinePlugin({
@@ -59,6 +73,16 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [

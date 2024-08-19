@@ -3,9 +3,8 @@ import "./sass/sass-master.scss";
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import {ThreeEnvironment} from './app_modules/three_canvas.js'
 
-
 if (WebGL.isWebGLAvailable()) {
-  new ThreeEnvironment( STATIC_DIR || '/site_media' );
+  new ThreeEnvironment("three", STATIC_DIR || "/site_media");
 } else {
   var warning = WEBGL.getWebGLErrorMessage()
   document.body.appendChild(warning)
@@ -39,59 +38,58 @@ document.addEventListener('DOMContentLoaded', function() {
   const requiredInputs = document.querySelectorAll('input:required, select:required, textarea:required');
   requiredInputs.forEach(function(element) {
     element.addEventListener('invalid', function(e) {
-      if (this.tagName.toLowerCase() === 'input'){
-        switch (this.type) {
-          case 'text':
-            switch (this.name) {
-              case 'nombre':
-                this.setCustomValidity('Por favor ingresa tu nombre.');
-                break;
-              case 'telefono':
-                this.setCustomValidity('Por favor ingresa un numero de telefono valido eg.:(52)55 1234 5678');
-                break;
-              default:
-                this.setCustomValidity('Por favor ingresa este dato.');
-            }
-            break;
-          case 'email':
-            this.setCustomValidity('Por favor ingresa una cuenta de correo válida eg.: nombre@dominio.com');
-            break;
-          case 'password':
-            if (this.name === 'psw') {
-              this.setCustomValidity('Tu contraseña deve tener almenos una mayuscula, una minuscula, un numero y un caracter especia.');
-            }
-            break;
-          case 'file':
-            this.setCustomValidity('Por favor sube un archivo ".jpg" o ".png".');
-            break;
-          case 'checkbox':
-            switch (this.name) {
-              case 'terminos':
-                this.setCustomValidity('Por favor acepta los términos y condiciones.');
-                break;
-              default:
-                this.setCustomValidity('Por favor selecciona una casilla.');
-            }
-            break;
-          case 'radio':
-            var name = this.name;
-            if (!window['ric_' + name]) {
-              this.setCustomValidity('Por favor selecciona una opción.');
-            }
-            break;
-        }
-      }else {
-        switch (this.name) {
-          case 'mensaje':
-            this.setCustomValidity('Por favor ingresa un mensaje.');
-            break;
-          case 'estado':
-            this.setCustomValidity('Por favor selecciona el estado donde resides.');
-            break;
-          default:
-            this.setCustomValidity('Por favor ingresa este dato.');
-            break;
-        }
+      switch (this.type) {
+        case "text":
+          switch (this.name) {
+            case "nombre":
+              this.setCustomValidity("Por favor ingresa tu nombre.");
+              break;
+            case "telefono":
+              this.setCustomValidity(
+                "Por favor ingresa un numero de telefono valido eg.:(52)55 1234 5678"
+              );
+              break;
+            default:
+              this.setCustomValidity("Por favor ingresa este dato.");
+          }
+          break;
+        case "email":
+          this.setCustomValidity(
+            "Por favor ingresa una cuenta de correo válida eg.: nombre@dominio.com"
+          );
+          break;
+        case "password":
+          if (this.name === "psw") {
+            this.setCustomValidity(
+              "Tu contraseña deve tener almenos una mayuscula, una minuscula, un numero y un caracter especia."
+            );
+          }
+          break;
+        case "file":
+          this.setCustomValidity(
+            'Por favor sube un archivo ".jpg" o ".png".'
+          );
+          break;
+        case "checkbox":
+          switch (this.name) {
+            case "terminos":
+              this.setCustomValidity(
+                "Por favor acepta los términos y condiciones."
+              );
+              break;
+            default:
+              this.setCustomValidity("Por favor selecciona una casilla.");
+          }
+          break;
+        case "radio":
+          var name = this.name;
+          if (!window["ric_" + name]) {
+            this.setCustomValidity("Por favor selecciona una opción.");
+          }
+          break;
+        case "mensaje":
+          this.setCustomValidity("Por favor ingresa un mensaje.");
+          break;
       }
     });
     element.addEventListener('input', function(e) {

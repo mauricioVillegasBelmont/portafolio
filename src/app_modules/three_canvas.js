@@ -1,97 +1,85 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
-class ThreeEnvironment{
+import { ThreeCoreBuilder } from "./hooks/ThreeEnvironment";
+import  ModelLoaderAPI  from "./API/modelsAPI";
 
+import Butterfly from "./hooks/butterfly";
 
-  // camera;
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, .1, 100);
-  // renderer;
-  renderer = new THREE.WebGLRenderer();
+class ThreeEnvironment {
+  scene;
+  camera;
+  renderer;
+  textureLoader;
+  handleResizers;
+  controls;
+  assets_path;
 
   textureLoader = new THREE.TextureLoader();
-  controls;
-  scene;
+  sceneAnimations = {};
+  constructor(id, assets_path) {
+    const self = this;
+    const {
+      scene,
+      camera,
+      renderer,
+      textureLoader,
+      controls,
+      handleResizers,
+      animate,
+      sceneAnimations,
+      sceneAdd,
+    } = ThreeCoreBuilder();
+    this.scene = scene;
+    this.camera = camera;
+    this.renderer = renderer;
+    this.controls = controls;
+    this.handleResizers = handleResizers;
+    this.animate = animate;
+    this.assets_path = assets_path;
+    this.textureLoader = textureLoader;
+    this.sceneAnimations = sceneAnimations;
 
-  // plane;
-  // mouse;
-  // raycaster;
-  // isShiftDown = false
+    this.init(id);
+  }
 
-  // rollOverMesh;
-  // rollOverMaterial
-  // cubeGeo;
-  // cubeMaterial
+  init(id) {
+    document.getElementById(id).appendChild(this.renderer.domElement);
+    this.setListeners();
+    this.setedEnvironment();
+    this.handleResizers();
+    this.animate();
+    this.setCharacters();
+    this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+  }
 
-  objects = []
-  constructor( assets_path ){
-    const self = this
+  setListeners() {
+    window.addEventListener("resize", this.handleResizers);
+  }
 
-    this.setWindowScene();
-    document.getElementById('three').appendChild( this.renderer.domElement );
-    // document.body
-    const textureEquirec = this.textureLoader.load( assets_path+'/img/textures/forest.jpg' );
+  setedEnvironment() {
+    const textureEquirec = this.textureLoader.load(
+      this.assets_path + "/img/textures/forest.jpg"
+    );
     textureEquirec.mapping = THREE.EquirectangularRefractionMapping;
     textureEquirec.colorSpace = THREE.SRGBColorSpace;
-
-    this.scene = new THREE.Scene();
     this.scene.background = textureEquirec;
-
-
-
-    // this.camera.position.set( 0, 0, 2.5 );
-    this.controls = new OrbitControls( this.camera, this.renderer.domElement );
-    this.controls.minDistance = 1.5;
-    this.controls.maxDistance = 6;
-
-    const loader = new GLTFLoader();
-    // console.log(`${assets_path}/models/butrefly-test.glb`);
-    loader.load(
-      `${assets_path}/models/butrefly-test.glb`,
-      function (gltf) {
-        console.log(gltf);
-        this.scene.add(gltf.scene);
-      },
-      undefined,
-      function (error) {
-        console.error(error);
-      }
-    );
-
-
-
-
-
-    // this.scene.background = new THREE.Color(0x9966ff)
-
-
-    const size = 200;
-    const divisions = 10;
-    const gridHelper = new THREE.GridHelper(size, divisions);
-    this.scene.add(gridHelper);
-
-
-
-
-
-    window.addEventListener('resize', function(){self.setWindowScene()}, false)
-    this.animate();
   }
+  setCharacters() {
+    let path = this.assets_path + "/models/butrefly-test.gltf";
+    ModelLoaderAPI.getModel(path).then((model) => {
+      const buterfly = new Butterfly(model);
+      buterfly.setPosition({
+        x: 10,
+      });
+      buterfly.setRotation({
+        y: 2,
+      });
+      this.sceneAnimations["buterfly"] = buterfly;
+      this.sceneAnimations["buterfly"].stAnimation("flying");
 
-  setWindowScene(){
-    this.camera.aspect = window.innerWidth / window.innerHeight;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight)
-  }
-  render(scene, camera) {
-    this.camera.lookAt( scene.position );
-    this.renderer.render(scene, camera)
-  }
-  animate() {
-    const self = this;
-    window.requestAnimationFrame( function(){self.animate()} );
-    this.render(this.scene, this.camera);
+
+      this.scene.add(this.sceneAnimations["buterfly"].character);
+    });
   }
 }
 export { ThreeEnvironment }

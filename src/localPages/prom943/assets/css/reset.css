@@ -1,0 +1,65 @@
+html {
+  font-family: initial; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+h1 a, h1 abbr, h1 audio, h1 b, h1 bdi, h1 bdo, h1 button, h1 canvas, h1 cite, h1 code, h1 command, h1 datalist, h1 del, h1 dfn, h1 em, h1 embed, h1 i, h1 img, h1 ins, h1 kbd, h1 label, h1 map, h1 mark, h1 math, h1 meter, h1 output, h1 progress, h1 q, h1 ruby, h1 s, h1 samp, h1 small, h1 span, h1 strong, h1 sub, h1 sup, h1 svg, h1 time, h1 u, h1 var, h1 video, h1 wbr, h1 text, h2 a, h2 abbr, h2 audio, h2 b, h2 bdi, h2 bdo, h2 button, h2 canvas, h2 cite, h2 code, h2 command, h2 datalist, h2 del, h2 dfn, h2 em, h2 embed, h2 i, h2 img, h2 ins, h2 kbd, h2 label, h2 map, h2 mark, h2 math, h2 meter, h2 output, h2 progress, h2 q, h2 ruby, h2 s, h2 samp, h2 small, h2 span, h2 strong, h2 sub, h2 sup, h2 svg, h2 time, h2 u, h2 var, h2 video, h2 wbr, h2 text, h3 a, h3 abbr, h3 audio, h3 b, h3 bdi, h3 bdo, h3 button, h3 canvas, h3 cite, h3 code, h3 command, h3 datalist, h3 del, h3 dfn, h3 em, h3 embed, h3 i, h3 img, h3 ins, h3 kbd, h3 label, h3 map, h3 mark, h3 math, h3 meter, h3 output, h3 progress, h3 q, h3 ruby, h3 s, h3 samp, h3 small, h3 span, h3 strong, h3 sub, h3 sup, h3 svg, h3 time, h3 u, h3 var, h3 video, h3 wbr, h3 text, h4 a, h4 abbr, h4 audio, h4 b, h4 bdi, h4 bdo, h4 button, h4 canvas, h4 cite, h4 code, h4 command, h4 datalist, h4 del, h4 dfn, h4 em, h4 embed, h4 i, h4 img, h4 ins, h4 kbd, h4 label, h4 map, h4 mark, h4 math, h4 meter, h4 output, h4 progress, h4 q, h4 ruby, h4 s, h4 samp, h4 small, h4 span, h4 strong, h4 sub, h4 sup, h4 svg, h4 time, h4 u, h4 var, h4 video, h4 wbr, h4 text, h5 a, h5 abbr, h5 audio, h5 b, h5 bdi, h5 bdo, h5 button, h5 canvas, h5 cite, h5 code, h5 command, h5 datalist, h5 del, h5 dfn, h5 em, h5 embed, h5 i, h5 img, h5 ins, h5 kbd, h5 label, h5 map, h5 mark, h5 math, h5 meter, h5 output, h5 progress, h5 q, h5 ruby, h5 s, h5 samp, h5 small, h5 span, h5 strong, h5 sub, h5 sup, h5 svg, h5 time, h5 u, h5 var, h5 video, h5 wbr, h5 text, h6 a, h6 abbr, h6 audio, h6 b, h6 bdi, h6 bdo, h6 button, h6 canvas, h6 cite, h6 code, h6 command, h6 datalist, h6 del, h6 dfn, h6 em, h6 embed, h6 i, h6 img, h6 ins, h6 kbd, h6 label, h6 map, h6 mark, h6 math, h6 meter, h6 output, h6 progress, h6 q, h6 ruby, h6 s, h6 samp, h6 small, h6 span, h6 strong, h6 sub, h6 sup, h6 svg, h6 time, h6 u, h6 var, h6 video, h6 wbr, h6 text, p a, p abbr, p audio, p b, p bdi, p bdo, p button, p canvas, p cite, p code, p command, p datalist, p del, p dfn, p em, p embed, p i, p img, p ins, p kbd, p label, p map, p mark, p math, p meter, p output, p progress, p q, p ruby, p s, p samp, p small, p span, p strong, p sub, p sup, p svg, p time, p u, p var, p video, p wbr, p text, ul a, ul abbr, ul audio, ul b, ul bdi, ul bdo, ul button, ul canvas, ul cite, ul code, ul command, ul datalist, ul del, ul dfn, ul em, ul embed, ul i, ul img, ul ins, ul kbd, ul label, ul map, ul mark, ul math, ul meter, ul output, ul progress, ul q, ul ruby, ul s, ul samp, ul small, ul span, ul strong, ul sub, ul sup, ul svg, ul time, ul u, ul var, ul video, ul wbr, ul text, ol a, ol abbr, ol audio, ol b, ol bdi, ol bdo, ol button, ol canvas, ol cite, ol code, ol command, ol datalist, ol del, ol dfn, ol em, ol embed, ol i, ol img, ol ins, ol kbd, ol label, ol map, ol mark, ol math, ol meter, ol output, ol progress, ol q, ol ruby, ol s, ol samp, ol small, ol span, ol strong, ol sub, ol sup, ol svg, ol time, ol u, ol var, ol video, ol wbr, ol text, ul li a, ul li abbr, ul li audio, ul li b, ul li bdi, ul li bdo, ul li button, ul li canvas, ul li cite, ul li code, ul li command, ul li datalist, ul li del, ul li dfn, ul li em, ul li embed, ul li i, ul li img, ul li ins, ul li kbd, ul li label, ul li map, ul li mark, ul li math, ul li meter, ul li output, ul li progress, ul li q, ul li ruby, ul li s, ul li samp, ul li small, ul li span, ul li strong, ul li sub, ul li sup, ul li svg, ul li time, ul li u, ul li var, ul li video, ul li wbr, ul li text, ol li a, ol li abbr, ol li audio, ol li b, ol li bdi, ol li bdo, ol li button, ol li canvas, ol li cite, ol li code, ol li command, ol li datalist, ol li del, ol li dfn, ol li em, ol li embed, ol li i, ol li img, ol li ins, ol li kbd, ol li label, ol li map, ol li mark, ol li math, ol li meter, ol li output, ol li progress, ol li q, ol li ruby, ol li s, ol li samp, ol li small, ol li span, ol li strong, ol li sub, ol li sup, ol li svg, ol li time, ol li u, ol li var, ol li video, ol li wbr, ol li text, blockquote a, blockquote abbr, blockquote audio, blockquote b, blockquote bdi, blockquote bdo, blockquote button, blockquote canvas, blockquote cite, blockquote code, blockquote command, blockquote datalist, blockquote del, blockquote dfn, blockquote em, blockquote embed, blockquote i, blockquote img, blockquote ins, blockquote kbd, blockquote label, blockquote map, blockquote mark, blockquote math, blockquote meter, blockquote output, blockquote progress, blockquote q, blockquote ruby, blockquote s, blockquote samp, blockquote small, blockquote span, blockquote strong, blockquote sub, blockquote sup, blockquote svg, blockquote time, blockquote u, blockquote var, blockquote video, blockquote wbr, blockquote text {
+  line-height: inherit;
+  font-family: inherit;
+  color: inherit; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+a {
+  text-decoration: none; }
+
+a img {
+  border: none; }
+
+body {
+  line-height: 1.25;
+  margin: 0;
+  padding: 0; }
+
+body, body *, body *::after, body *::before {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button, a {
+  outline: 0; }
+  button.disabled, button:disabled, a.disabled, a:disabled {
+    cursor: auto;
+    pointer-events: none; }
+
+/*# sourceMappingURL=reset.css.map */
