@@ -57,13 +57,6 @@ module.exports = {
             `./${process.env.WEBPACK_OUTPUT}/models/`
           ),
         },
-        {
-          from: "src/localPages/",
-          to: path.resolve(
-            __dirname,
-            `./${process.env.WEBPACK_OUTPUT}/pages/`
-          ),
-        },
       ],
     }),
     new webpack.DefinePlugin({
