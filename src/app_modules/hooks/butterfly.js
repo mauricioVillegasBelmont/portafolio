@@ -7,12 +7,14 @@ export default class Butterfly {
   animationClips;
   animationMixer;
   characterAction;
+  clockwise = true;
   constructor(gltf) {
     this.model = gltf;
     this.animationMixer = new THREE.AnimationMixer(gltf.scene);
     this.animationClips = gltf.animations || {};
-
-
+  }
+  set clockwise(val){
+    this.clockwise = val;
   }
   stAnimation(animationName) {
     const clip = THREE.AnimationClip.findByName(
@@ -41,9 +43,13 @@ export default class Butterfly {
     const { x, y, z } = args;
   }
 
-  fly(camera) {
+  fly() {
 
-    const time = (Date.now() * 0.001)/2; // tiempo en segundos
+
+    var time = (Date.now() * 0.001)/2; // tiempo en segundos
+    if (!this.clockwise) {
+      time *= -1;
+    }
     const origin = new THREE.Vector3(0, 0, 0);
     const radius = ThreeUtils.getDistance(origin, this.character.position);
 
@@ -87,29 +93,17 @@ export default class Butterfly {
     const dy = 0 - this.character.position.y;
     const dz = 0 - this.character.position.z;
 
-    const angle = Math.atan2(dx, dz) + Math.PI;
+
+    var angle = Math.atan2(dx, dz);
+    if (this.clockwise) {
+      angle += Math.PI;
+    }
 
     const rotation = new THREE.Vector3(
       Math.atan2(dy, Math.sqrt(dx * dx + dz * dz)),
       angle,
       Math.atan(slopeX)
     );
-    // if (Math.atan(slopeX) < this.testMin) {
-    //   this.testMin = Math.atan(slopeX);
-    //   console.log(this.testMin);
-    // }
-    // if (Math.atan(slopeX) > this.testMax) {
-    //   this.testMax = Math.atan(slopeX);
-    //   console.log(this.testMax);
-    // }
-    //   z: this.character.rotation.z,
-
-
-
-
-
-
-
 
     this.setPosition(coords);
     this.setRotation(rotation);
@@ -122,6 +116,6 @@ export default class Butterfly {
     const { delta, scene, camera } = args;
     if (!this.characterAction) return;
     this.animationMixer.update(delta);
-    this.fly(camera);
+    this.fly();
   }
 }

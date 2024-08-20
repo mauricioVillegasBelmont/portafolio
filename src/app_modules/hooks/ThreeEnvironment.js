@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { WindowUtils } from "../utils/windowUtils";
 import { element } from "three/examples/jsm/nodes/Nodes.js";
 
-export function ThreeCoreBuilder() {
+export function ThreeCoreBuilder(id) {
   const light = new THREE.AmbientLight(0x404040, Math.PI * 6); // soft white light
   const clock = new THREE.Clock();
   const textureLoader = new THREE.TextureLoader();
@@ -13,6 +13,8 @@ export function ThreeCoreBuilder() {
 
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(WindowUtils.getWidth, WindowUtils.getHeight);
+  document.getElementById(id).appendChild(renderer.domElement);
+
 
   const scene = new THREE.Scene();
   scene.add(light);
@@ -21,24 +23,23 @@ export function ThreeCoreBuilder() {
 
 
   const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-
-  // camera.lookAt(new THREE.Vector3(1, 0, 0));
-  // camera.updateProjectionMatrix();
-
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.minDistance = 1.5;
   controls.maxDistance = 6;
+  controls.update();
+  camera.lookAt(new THREE.Vector3(1, 1, 1));
+  camera.updateProjectionMatrix();
+
 
   const handleResizers = () => {
-
     camera.aspect = WindowUtils.aspectRatio;
     camera.updateProjectionMatrix();
     renderer.setSize(WindowUtils.getWidth, WindowUtils.getHeight);
-
   };
+
   const animate = () => {
     const delta = clock.getDelta();
-    controls.update(delta);
+    // controls.update(delta);
     renderer.render(scene, camera);
     for (const key in sceneAnimations) {
       sceneAnimations[key].update({
@@ -52,12 +53,11 @@ export function ThreeCoreBuilder() {
   const sceneAdd = (character) => {
     scene.add(character);
   };
+
   return {
     scene,
     camera,
-    renderer,
     textureLoader,
-    controls,
     handleResizers,
     animate,
     sceneAnimations,
