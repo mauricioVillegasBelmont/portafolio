@@ -8,7 +8,7 @@
     "url": "https://github.com/mauricioVillegasBelmont/portafolio.git"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack webpack.config.js",
     "start": "node app_engine.js",
     "startdev": "nodemon --inspect app_engine.js",
     "format": "prettier --write '**/*.js'"
