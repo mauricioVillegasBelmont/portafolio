@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 require("dotenv").config();
 module.exports = {
-  mode: `${process.env.NODE_ENV}`,
+  mode: `${process.env.mode}`,
   entry: {
     "main.bundle": "./src/index.js",
     "layout.bundle": "./src/layout.js",
@@ -20,7 +20,7 @@ module.exports = {
     maxAssetSize: 1024000,
   },
 
-  watch: process.env.NODE_ENV === "development",
+  watch: process.env.mode === "development",
   watchOptions: {
     ignored: /node_modules/,
     poll: 500, // Check for changes every second
